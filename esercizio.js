@@ -39,6 +39,20 @@ const fetchBook = () => {
         btnDelete.addEventListener("click", function () {
           row.removeChild(col);
         });
+
+        btnBuy.addEventListener("click", function () {
+          const ul = document.querySelector("ul");
+          const shop = document.createElement("li");
+          shop.innerText = books.title;
+          ul.appendChild(shop);
+          const btnRemove = document.createElement("button");
+          btnRemove.innerText = "Remove";
+          shop.appendChild(btnRemove);
+          btnRemove.className = "btn btn-danger mx-2 my-2";
+          btnRemove.addEventListener("click", function () {
+            ul.removeChild(shop);
+          });
+        });
       });
     })
 
